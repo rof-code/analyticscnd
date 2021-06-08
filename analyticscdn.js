@@ -1,3 +1,4 @@
+
 (function(w,d,s,g,js,fs){
   g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
   js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
@@ -6,6 +7,7 @@
 }(window,document,'script'));
 
 
+<script>
 
 // == NOTE ==
 // This code uses ES6 promises. If you want to use this code in a browser
@@ -20,7 +22,7 @@ gapi.analytics.ready(function() {
    */
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
-    clientid: '210242989073-n028jsiojpj0q8ftac9m743fmnp7domi.apps.googleusercontent.com'
+    clientid: 'REPLACE WITH YOUR CLIENT ID'
   });
 
 
@@ -351,11 +353,3 @@ gapi.analytics.ready(function() {
   }
 
 });
-
-
-
-
-
-
-
-
