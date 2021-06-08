@@ -20,7 +20,7 @@ gapi.analytics.ready(function() {
    */
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
-    clientid: 'REPLACE WITH YOUR CLIENT ID'
+    clientid: '210242989073-n028jsiojpj0q8ftac9m743fmnp7domi.apps.googleusercontent.com'
   });
 
 
