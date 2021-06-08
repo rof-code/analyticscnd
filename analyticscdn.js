@@ -5,44 +5,25 @@
   fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
 }(window,document,'script'));
 
-gapi.analytics.ready(function() {
 
-  /**
-   * Authorize the user immediately if the user has already granted access.
-   * If no access has been created, render an authorize button inside the
-   * element with the ID "embed-api-auth-container".
-   */
+
+
+gapi.analytics.ready(function() {
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
     clientid: '210242989073-n028jsiojpj0q8ftac9m743fmnp7domi.apps.googleusercontent.com'
   });
-
-
-  /**
-   * Create a ViewSelector for the first view to be rendered inside of an
-   * element with the id "view-selector-1-container".
-   */
   var viewSelector1 = new gapi.analytics.ViewSelector({
     container: 'view-selector-1-container'
   });
 
-  /**
-   * Create a ViewSelector for the second view to be rendered inside of an
-   * element with the id "view-selector-2-container".
-   */
   var viewSelector2 = new gapi.analytics.ViewSelector({
     container: 'view-selector-2-container'
   });
 
-  // Render both view selectors to the page.
   viewSelector1.execute();
   viewSelector2.execute();
-
-
-  /**
-   * Create the first DataChart for top countries over the past 30 days.
-   * It will be rendered inside an element with the id "chart-1-container".
-   */
+  
   var dataChart1 = new gapi.analytics.googleCharts.DataChart({
     query: {
       metrics: 'ga:sessions',
@@ -63,10 +44,6 @@ gapi.analytics.ready(function() {
   });
 
 
-  /**
-   * Create the second DataChart for top countries over the past 30 days.
-   * It will be rendered inside an element with the id "chart-2-container".
-   */
   var dataChart2 = new gapi.analytics.googleCharts.DataChart({
     query: {
       metrics: 'ga:sessions',
@@ -86,19 +63,12 @@ gapi.analytics.ready(function() {
     }
   });
 
-  /**
-   * Update the first dataChart when the first view selecter is changed.
-   */
+
   viewSelector1.on('change', function(ids) {
     dataChart1.set({query: {ids: ids}}).execute();
   });
 
-  /**
-   * Update the second dataChart when the second view selecter is changed.
-   */
   viewSelector2.on('change', function(ids) {
     dataChart2.set({query: {ids: ids}}).execute();
   });
-
 });
-
